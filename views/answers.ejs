@@ -11,13 +11,18 @@ $(window).load(function()  {
 		var question2Ans=$("input[name=question2]:checked").val();
 		var question3Ans=$("input[name=question3]:checked").val();
 		var feedback1,feedback2,feedback3;
-		var data=Number(12);
+		if(question1Ans==null || question2Ans==null || question3Ans==null)
+		{
+			alert('Answer all questions');
+		}
+		else
+		{
 		if(question1Ans==Number(12))
 		{
 			jQuery("label[for='q1']").html("Ans: Correct");
 			feedback1="Correct";
 		}
-		else
+		else if(question1Ans!=Number(12))
 		{
 			jQuery("label[for='q1']").html("Ans: Incorrect");	
 			feedback1="Incorrect";
@@ -27,7 +32,7 @@ $(window).load(function()  {
 			jQuery("label[for='q2']").html("Ans: Correct");
 			feedback2="Correct";
 		}
-		else
+		else if(question2Ans!=Number(1))
 		{
 			jQuery("label[for='q2']").html("Ans: Incorrect");
 			feedback2="Incorrect";	
@@ -37,12 +42,12 @@ $(window).load(function()  {
 			jQuery("label[for='q3']").html("Ans: Correct");
 			feedback3="Correct";
 		}
-		else
+		else if(question3Ans!=Number(4))
 		{
 			jQuery("label[for='q3']").html("Ans: Incorrect");	
 			feedback3="Incorrect";
 		}
-
+		
 		$('#btnSubmit').prop("disabled",true);
 		jQuery("label[for='submission']").html("Your responses have been recorded. You can log out now.");
 
@@ -64,7 +69,8 @@ $(window).load(function()  {
 		            console.log("Error.");
 		            console.log(xhr.status + ": " + xhr.responseText); 
 		        }
-		    });			
+		    });
+		  }			
 	});
 
 });
