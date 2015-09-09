@@ -9,6 +9,7 @@ var mysql = require('mysql');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var isSession=req.session.user;
+  //check if the user has logged in
   if(typeof isSession==='undefined')
   {  
     res.render('index',{tagline:''});
@@ -27,7 +28,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req, res) {
-
+//check the credentials provided by user
  var userName=req.body.username;
  var password=req.body.password;
   

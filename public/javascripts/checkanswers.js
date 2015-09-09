@@ -1,4 +1,5 @@
-<script type="text/javascript">
+//checkanswers.js
+//Description: for checking the answers of the variables
 $(window).load(function()  {
 	$('#btnSubmit').click(function(e){
 		
@@ -60,4 +61,3 @@ $(window).load(function()  {
 	});
 
 });
-</script>
